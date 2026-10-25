@@ -1,0 +1,330 @@
+{
+  "app": {
+    "name": "Licence Saathi",
+    "shortName": "EasyDL",
+    "tagline": "Indian RTO & Sarathi Parivahan Digital Companion",
+    "version": "1.0.0",
+    "project_lead": "Aritro Roy",
+    "hackathon": "Hackcache26 — MARK-III Mparivahan",
+    "target_users": "Indian Citizens (Pan-India)",
+    "statutory_authority": "Ministry of Road Transport and Highways (MoRTH), Government of India",
+    "governing_acts": [
+      "Motor Vehicles Act 1988 (Amended 2019)",
+      "Central Motor Vehicles Rules (CMVR) 1989",
+      "Rules of the Road Regulations 1989 / 2017"
+    ],
+    "disclaimer": "Official prototype for Indian RTO Sarathi Parivahan. Rules and fees per CMVR & state transport departments."
+  },
+  "vehicle_classes": [
+    {
+      "code": "MCWOG_50",
+      "name": "Motorcycle Without Gear (<= 50cc)",
+      "category": "Two-Wheeler (Moped / Light Electric)",
+      "min_age": 16,
+      "requires_parental_consent": true,
+      "parental_consent_form": "Form 2 Part II (Consent by Parent / Legal Guardian)",
+      "fee": 150,
+      "test_fee": 50,
+      "total_fee": 200,
+      "description": "Two-wheelers up to 50cc engine capacity, mopeds, and lightweight gearless electric scooters."
+    },
+    {
+      "code": "MCWOG",
+      "name": "Motorcycle Without Gear (> 50cc)",
+      "category": "Two-Wheeler (Gearless Scooters & High-Speed EV)",
+      "min_age": 18,
+      "requires_parental_consent": false,
+      "fee": 150,
+      "test_fee": 50,
+      "total_fee": 200,
+      "description": "Automatic/gearless scooters (e.g. Activa, Jupiter, Access, Ola, Ather) exceeding 50cc engine capacity."
+    },
+    {
+      "code": "MCWG",
+      "name": "Motorcycle With Gear",
+      "category": "Two-Wheeler (Geared Motorbikes)",
+      "min_age": 18,
+      "requires_parental_consent": false,
+      "fee": 150,
+      "test_fee": 50,
+      "total_fee": 200,
+      "description": "Standard geared motorcycles, motorbikes, and geared two-wheelers of all engine displacements."
+    },
+    {
+      "code": "LMV",
+      "name": "Light Motor Vehicle (Non-Transport)",
+      "category": "Four-Wheeler (Private Motor Cars & SUVs)",
+      "min_age": 18,
+      "requires_parental_consent": false,
+      "fee": 150,
+      "test_fee": 50,
+      "total_fee": 200,
+      "description": "Personal passenger cars, hatchbacks, sedans, SUVs, MPVs, and private light utility motor vehicles (GVW <= 7500 kg)."
+    },
+    {
+      "code": "MCWG_LMV",
+      "name": "Motorcycle with Gear + Light Motor Vehicle",
+      "category": "Dual Class Combo (Bike & Private Car)",
+      "min_age": 18,
+      "requires_parental_consent": false,
+      "fee": 300,
+      "test_fee": 50,
+      "total_fee": 350,
+      "description": "Combined dual-licence application for driving both geared two-wheelers and private four-wheeler passenger cars."
+    },
+    {
+      "code": "TRANS",
+      "name": "Commercial & Transport Vehicles",
+      "category": "Commercial / Transport",
+      "min_age": 20,
+      "requires_parental_consent": false,
+      "requires_prior_lmv_years": 1,
+      "medical_form": "Form 1A Mandatory (Signed by Registered Medical Practitioner)",
+      "fee": 200,
+      "test_fee": 100,
+      "total_fee": 300,
+      "description": "Taxis, commercial passenger cabs, delivery vans, auto-rickshaws, and transport vehicles carrying goods or passengers."
+    }
+  ],
+  "digilocker_and_ekyc": {
+    "enabled": true,
+    "service": "DigiLocker & UIDAI Aadhaar Paperless e-KYC",
+    "benefits": [
+      "Contactless paperless verification without visiting RTO for document submission",
+      "Instant face authentication / Aadhaar OTP verification on Sarathi Parivahan portal",
+      "Zero physical document upload required when pulled directly from DigiLocker"
+    ],
+    "supported_documents": {
+      "identity_and_address": [
+        "Aadhaar Card (via DigiLocker / UIDAI OTP)",
+        "Electoral Photo ID Card (Voter ID)",
+        "Indian Passport (DigiLocker verified)"
+      ],
+      "age_proof": [
+        "10th Class Marksheet / Passing Certificate (CBSE/ICSE/State Board via DigiLocker)",
+        "Birth Certificate issued by Municipal Corporation (DigiLocker verified)",
+        "Indian Passport"
+      ],
+      "medical_fitness": [
+        "Form 1: Physical Fitness Self-Declaration (Non-Transport under 40 years)",
+        "Form 1A: Medical Certificate signed by Registered Medical Practitioner (Age 40+ or Transport)"
+      ]
+    }
+  },
+  "application_stages": [
+    {
+      "stage_index": 0,
+      "key": "submitted",
+      "title": "Application Submitted & Fee Paid",
+      "description": "Form 2 application registered and statutory fee paid on Sarathi Parivahan portal.",
+      "rto_form": "Form 2 (Application for Learner's Licence)",
+      "icon": "FileCheck"
+    },
+    {
+      "stage_index": 1,
+      "key": "scrutiny",
+      "title": "Aadhaar e-KYC & Document Scrutiny",
+      "description": "RTO verification officer validating DigiLocker age proof, address proof, and Form 1 medical fitness.",
+      "icon": "SearchCheck"
+    },
+    {
+      "stage_index": 2,
+      "key": "slot_booking",
+      "title": "LL Online Test Slot / Proctoring",
+      "description": "Appointment scheduled for Computer-based Learner's Licence test (STALL) or home online test.",
+      "icon": "CalendarClock"
+    },
+    {
+      "stage_index": 3,
+      "key": "approved",
+      "title": "Learner's Licence Issued (Form 3)",
+      "description": "LL test passed. Digital Form 3 Learner's Licence generated, valid for 6 months across India.",
+      "rto_form": "Form 3 (Learner's Licence)",
+      "icon": "Award"
+    }
+  ],
+  "permanent_license_guidelines": {
+    "prerequisite": "Must hold a valid Form 3 Learner's Licence for minimum 30 days",
+    "maximum_window": "Must apply within 180 days (6 months) before Learner's Licence expires",
+    "form": "Form 4 (Application for Permanent Driving Licence)",
+    "practical_test_requirements": [
+      "Driving Track Test at Automated Driving Test Track (ADTT) / RTO grounds",
+      "Four-Wheeler: Reverse 'S', Parallel Parking, 8-Figure, Gradient/Hill restart without rollback",
+      "Two-Wheeler: Serpentine track, emergency braking, balancing at slow speeds"
+    ],
+    "outcome": "Form 7 (Smart Card Driving Licence) + digital licence in mParivahan & DigiLocker"
+  },
+  "mock_test_settings": {
+    "total_questions": 15,
+    "pass_marks": 9,
+    "pass_percentage": 60,
+    "time_limit_minutes": 15,
+    "time_per_question_seconds": 60,
+    "categories": [
+      "Road Signs (Schedule 1 of MV Act)",
+      "Traffic Rules of the Road Regulations 1989",
+      "Safety & Motor Vehicles Act Penalties"
+    ]
+  },
+  "rto_jurisdictions": [
+    { "code": "DL-01", "state": "Delhi", "city": "Delhi (Mall Road / North Delhi)" },
+    { "code": "DL-04", "state": "Delhi", "city": "Delhi (Janakpuri / West Delhi)" },
+    { "code": "MH-01", "state": "Maharashtra", "city": "Mumbai South (Tardeo)" },
+    { "code": "MH-02", "state": "Maharashtra", "city": "Mumbai West (Andheri)" },
+    { "code": "KA-01", "state": "Karnataka", "city": "Bengaluru Central (Koramangala)" },
+    { "code": "KA-03", "state": "Karnataka", "city": "Bengaluru East (Indiranagar)" },
+    { "code": "WB-01", "state": "West Bengal", "city": "Kolkata North (Beltala)" },
+    { "code": "WB-02", "state": "West Bengal", "city": "Kolkata South (Kasba)" },
+    { "code": "UP-32", "state": "Uttar Pradesh", "city": "Lucknow (Transport Nagar)" },
+    { "code": "TN-01", "state": "Tamil Nadu", "city": "Chennai Central (Ayanavaram)" }
+  ],
+  "sample_applications": [
+    {
+      "application_number": "DL-2026-98124",
+      "applicant_name": "Demo Applicant (Sample Record)",
+      "dob": "2004-05-14",
+      "rto_code": "DL-01 (Mall Road)",
+      "vehicle_classes": ["MCWG", "LMV"],
+      "stage_index": 2,
+      "status": "Slot Booked",
+      "timeline": [
+        { "title": "Application Submitted (Form 2)", "date": "2026-10-10", "completed": true },
+        { "title": "DigiLocker e-KYC Scrutiny", "date": "2026-10-12", "completed": true },
+        { "title": "LL Online Test Slot Booked", "date": "2026-10-25", "completed": false, "active": true },
+        { "title": "Learner's Licence Approval (Form 3)", "date": "Pending", "completed": false }
+      ]
+    },
+    {
+      "application_number": "MH-2026-11492",
+      "applicant_name": "Test User (Sample Record)",
+      "dob": "2003-11-20",
+      "rto_code": "MH-02 (Andheri)",
+      "vehicle_classes": ["LMV"],
+      "stage_index": 1,
+      "status": "Under Scrutiny",
+      "timeline": [
+        { "title": "Application Submitted (Form 2)", "date": "2026-10-18", "completed": true },
+        { "title": "DigiLocker e-KYC Scrutiny", "date": "In Progress", "completed": false, "active": true },
+        { "title": "LL Online Test Slot Booking", "date": "Pending", "completed": false },
+        { "title": "Learner's Licence Approval (Form 3)", "date": "Pending", "completed": false }
+      ]
+    },
+    {
+      "application_number": "WB-2026-78210",
+      "applicant_name": "Sample Citizen (Sample Record)",
+      "dob": "2002-08-09",
+      "rto_code": "WB-01 (Beltala)",
+      "vehicle_classes": ["MCWG", "LMV"],
+      "stage_index": 3,
+      "status": "Approved & Issued",
+      "timeline": [
+        { "title": "Application Submitted (Form 2)", "date": "2026-09-28", "completed": true },
+        { "title": "DigiLocker e-KYC Scrutiny", "date": "2026-09-30", "completed": true },
+        { "title": "LL Test Passed (14/15)", "date": "2026-10-05", "completed": true },
+        { "title": "Form 3 Digital LL Generated", "date": "2026-10-05", "completed": true }
+      ]
+    }
+  ],
+  "state_rto_policies": [
+    {
+      "state_code": "KA",
+      "state_name": "Karnataka",
+      "portal": "Sarathi (NIC)",
+      "online_ll_test": true,
+      "cmvr_rule_11_pass_percentage": 60,
+      "cmvr_rule_11_description": "Rule 11 CMVR: Mandatory computerized knowledge test covering road signs, regulations, and driver duties (60% qualifying score).",
+      "fee_schedule": { "ll": 200, "dl": 500 },
+      "required_docs": ["Aadhaar e-KYC", "Age Proof", "Address Proof", "Photo", "Form 1-A (if > 40 yrs)"]
+    },
+    {
+      "state_code": "MH",
+      "state_name": "Maharashtra",
+      "portal": "Sarathi (NIC)",
+      "online_ll_test": true,
+      "cmvr_rule_11_pass_percentage": 60,
+      "fee_schedule": { "ll": 175, "dl": 400 },
+      "required_docs": ["Aadhaar or Govt ID", "Age & Address Proof", "Photo", "Medical Form 1"]
+    },
+    {
+      "state_code": "TN",
+      "state_name": "Tamil Nadu",
+      "portal": "Sarathi / e-Sarathi TN",
+      "online_ll_test": true,
+      "test_languages": ["Tamil", "English"],
+      "cmvr_rule_11_pass_percentage": 60,
+      "fee_schedule": { "ll": 200, "dl": 500 },
+      "required_docs": ["Tamil/English Application", "Aadhaar e-KYC", "Age Proof", "Address Proof"]
+    },
+    {
+      "state_code": "DL",
+      "state_name": "Delhi",
+      "portal": "Sarathi (Faceless Transport Services)",
+      "online_ll_test": true,
+      "cmvr_rule_11_pass_percentage": 60,
+      "fee_schedule": { "ll": 200, "dl": 500 },
+      "required_docs": ["Aadhaar Face Auth / OTP", "DigiLocker Marksheet", "Self-declaration Form 1"]
+    },
+    {
+      "state_code": "WB",
+      "state_name": "West Bengal",
+      "portal": "Sarathi (NIC)",
+      "online_ll_test": true,
+      "cmvr_rule_11_pass_percentage": 60,
+      "fee_schedule": { "ll": 200, "dl": 500 },
+      "required_docs": ["Aadhaar e-KYC", "Voter ID / Passport", "10th Marksheet", "Form 1"]
+    },
+    {
+      "state_code": "UP",
+      "state_name": "Uttar Pradesh",
+      "portal": "Sarathi (NIC)",
+      "online_ll_test": true,
+      "cmvr_rule_11_pass_percentage": 60,
+      "fee_schedule": { "ll": 200, "dl": 500 },
+      "required_docs": ["Aadhaar e-KYC", "Age Proof", "Address Proof", "Passport Photo"]
+    }
+  ],
+  "adtt_tracks": [
+    {
+      "id": "KA-ADTT-01",
+      "state": "Karnataka",
+      "name": "Bengaluru Central RTO Track (Koramangala)",
+      "slots": ["09:30 AM - 11:30 AM", "12:00 PM - 02:00 PM", "02:30 PM - 04:30 PM"],
+      "sensor_types": ["Underbody RFID", "Overhead Optical Sensors", "Gradient Incline Lasers"]
+    },
+    {
+      "id": "MH-ADTT-01",
+      "state": "Maharashtra",
+      "name": "Mumbai Andheri RTO Ground",
+      "slots": ["09:30 AM - 11:30 AM", "12:00 PM - 02:00 PM", "02:30 PM - 04:30 PM"],
+      "sensor_types": ["Pressure Pads", "Kerb Bump Sensors", "High-Speed CCTV"]
+    },
+    {
+      "id": "DL-ADTT-01",
+      "state": "Delhi",
+      "name": "Delhi Sarita Vihar ADTT Track",
+      "slots": ["09:30 AM - 11:30 AM", "12:00 PM - 02:00 PM", "02:30 PM - 04:30 PM"],
+      "sensor_types": ["Laser Kerb Proximity", "Biometric Terminal", "Auto Rollback Detection"]
+    },
+    {
+      "id": "TN-ADTT-01",
+      "state": "Tamil Nadu",
+      "name": "Chennai Central RTO Track",
+      "slots": ["09:30 AM - 11:30 AM", "12:00 PM - 02:00 PM", "02:30 PM - 04:30 PM"],
+      "sensor_types": ["Optical Beam Sensors", "Emergency Stop Line Triggers"]
+    },
+    {
+      "id": "WB-ADTT-01",
+      "state": "West Bengal",
+      "name": "Kolkata Beltala ADTT Ground",
+      "slots": ["09:30 AM - 11:30 AM", "12:00 PM - 02:00 PM", "02:30 PM - 04:30 PM"],
+      "sensor_types": ["RFID Track Entry", "Laser Rollback Monitor", "Overhead Cameras"]
+    },
+    {
+      "id": "UP-ADTT-01",
+      "state": "Uttar Pradesh",
+      "name": "Lucknow Transport Nagar Track",
+      "slots": ["09:30 AM - 11:30 AM", "12:00 PM - 02:00 PM", "02:30 PM - 04:30 PM"],
+      "sensor_types": ["Digital Scoring Server", "Incline Start Sensors", "Reverse S/H Lasers"]
+    }
+  ]
+}
